@@ -20,5 +20,11 @@ $scope.addContact = function() {
 	});
 };
 
+//To have it so that wanna-delete ID shows up on the command prompt
+$scope.remove = function(id) {
+	console.log(id);
+	$http.delete('/contactlist/' + id)
+};
+
 	
 }
