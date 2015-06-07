@@ -21,9 +21,13 @@ $scope.addContact = function() {
 };
 
 //To have it so that wanna-delete ID shows up on the command prompt
+//Step 37: Server is receiving what controller is sending 
 $scope.remove = function(id) {
 	console.log(id);
-	$http.delete('/contactlist/' + id)
+	//success part allow browser to refresh everytime delete is conducted
+	$http.delete('/contactlist/' + id).success(function(response) {
+		refresh();
+	});
 };
 
 	
