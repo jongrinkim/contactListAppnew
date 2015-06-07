@@ -30,5 +30,18 @@ $scope.remove = function(id) {
 	});
 };
 
+//Step 40: define the edit button: use GET request
+$scope.edit = function(id) {
+	console.log(id);
+	$http.get('/contactlist/' + id).success(function(response) {
+		$scope.contact = response;
+	});
+};
+//Step 42: use PUT request to send the data to server to be updated
+//id and contact will be sent to server
+$scope.update = function() {
+	console.log($scope.contact._id);
+	$http.put('/contactlist/' + $scope.contact_id, $scope.contact)
+};
 	
 }
