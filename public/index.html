@@ -20,6 +20,7 @@
 					<th>Email</th>
 					<th>Number</th>	
 					<th>Action</th>
+					<th>&nbsp;</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -31,6 +32,8 @@
 					<td>
 					<input class="form-control" ng-model="contact.number"></td>
 					<td><button class="btn btn-primary" ng-click="addContact()">Add Contact</button></td>
+					<!-- Update button next to Add Contact button-->
+					<td><button class="btn btn-info" ng-click="update()">Update</button></td>
 
 
 
@@ -41,6 +44,8 @@
 					<td>{{contact.number}}</td>
 					<td><button class="btn btn-danger" ng-click="remove
 					(contact._id)">Remove</button></td>
+<!--Step 39: Put request will modify data in the table: add Edit button-->
+					<td><button class="btn btn-warning" ng-click="edit(contact._id)">Edit</button></td>
 				</tr>
 			</tbody>
 		</table>
